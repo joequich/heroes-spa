@@ -6,7 +6,7 @@ export const Navbar = () => {
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
-                    Asociaciones
+                    Associations
                 </Link>
 
                 <div className="navbar-collapse">
@@ -31,7 +31,7 @@ export const Navbar = () => {
                     </div>
                 </div>
 
-                <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <div className="navbar-collapse w-100 order-3 dual-collapse2">
                     <ul className="navbar-nav ms-auto">
                         <NavLink
                             activeClassName="active"
