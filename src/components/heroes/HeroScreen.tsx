@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { getHeroById } from '../../selectors/getHeroById';
 import { RouteComponentProps } from 'react-router-dom';
@@ -9,8 +9,7 @@ interface IParams {
 
 export const HeroScreen = ({ history }:RouteComponentProps) => {
     const { heroeId } = useParams<IParams>();
-
-    const hero = getHeroById(heroeId);
+    const hero = useMemo(() => getHeroById(heroeId), [heroeId]);
 
     if (!hero) {
         return <Redirect to="/" />;
@@ -35,7 +34,10 @@ export const HeroScreen = ({ history }:RouteComponentProps) => {
     return (
         <div className="row mt-5">
             <div className="col-4">
-                <img src={`../assets/heroes/${heroeId}.jpg`} alt={superhero} className="img-thumbnail" />
+                <img 
+                    src={`../assets/heroes/${heroeId}.jpg`} 
+                    alt={superhero} 
+                    className="img-thumbnail animate__animated animate__fadeInLeft" />
             </div>
             <div className="col-8">
                 <h3>{superhero}</h3>
