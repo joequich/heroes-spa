@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+import { AuthContext } from '../../auth/AuthContext';
+import { EAuthReducer } from '../../types/types';
 
 export const LoginScreen = ({ history }: RouteComponentProps) => {
+    const { dispatch } = useContext(AuthContext);
+
     const handleLogin = () => {
         // history.push('/');
+        dispatch({
+            type: EAuthReducer.login,
+            payload: {
+                name: 'Joseph'
+            }
+        });
+        
         history.replace('/');
     };
 

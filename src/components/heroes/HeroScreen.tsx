@@ -3,12 +3,8 @@ import { Redirect, useParams } from 'react-router-dom';
 import { getHeroById } from '../../selectors/getHeroById';
 import { RouteComponentProps } from 'react-router-dom';
 
-interface IParams {
-    heroeId: string;
-}
-
 export const HeroScreen = ({ history }:RouteComponentProps) => {
-    const { heroeId } = useParams<IParams>();
+    const { heroeId } = useParams<{ heroeId: string}>();
     const hero = useMemo(() => getHeroById(heroeId), [heroeId]);
 
     if (!hero) {
