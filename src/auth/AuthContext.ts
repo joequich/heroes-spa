@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { IUserAuth, IStateAuth, TActionAuth, IUserContextData } from "../types/types";
+import { IUserContextData } from "../types/types";
 
 const inititalState = {
     logged: false 

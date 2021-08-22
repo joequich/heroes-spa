@@ -5,18 +5,14 @@ export enum EAuthReducer {
     logout = '[auth] logout',
 }
 
-export interface IUserAuth {
-    name: string
-}
-
-export interface IStateAuth {
-    user?: IUserAuth;
+export interface IStateAuth{
+    name?: string
     logged: boolean;
 }
 
 export type TActionAuth = 
-    | { type: EAuthReducer.login; payload: IUserAuth; }
-    | { type: EAuthReducer.logout; payload: IUserAuth; }
+    | { type: EAuthReducer.login; payload: { name: string; }; }
+    | { type: EAuthReducer.logout; payload: { name: string; }; }
 
 export interface IUserContextData {
     user: IStateAuth;
