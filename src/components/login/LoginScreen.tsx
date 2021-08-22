@@ -8,6 +8,7 @@ export const LoginScreen = ({ history }: RouteComponentProps) => {
 
     const handleLogin = () => {
         // history.push('/');
+        const lastPath = localStorage.getItem('lastPath') || '/';
         dispatch({
             type: EAuthReducer.login,
             payload: {
@@ -15,7 +16,7 @@ export const LoginScreen = ({ history }: RouteComponentProps) => {
             }
         });
         
-        history.replace('/');
+        history.replace(lastPath);
     };
 
     return (
