@@ -12,7 +12,7 @@ export interface IStateAuth{
 
 export type TActionAuth = 
     | { type: EAuthReducer.login; payload: { name: string; }; }
-    | { type: EAuthReducer.logout; payload: { name: string; }; }
+    | { type: EAuthReducer.logout; }
 
 export interface IUserContextData {
     user: IStateAuth;
